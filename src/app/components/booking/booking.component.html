@@ -1,0 +1,25 @@
+<div class="p-6 max-w-lg mx-auto bg-white shadow-lg rounded-lg">
+  <h2 class="text-2xl font-bold text-gray-800">Book Your Parking Spot</h2>
+
+  <label class="block mt-4 text-gray-600">Select Parking Spot:</label>
+  <select class="w-full p-2 border rounded" [(ngModel)]="selectedSpot">
+    <option value="" disabled selected>Select a spot</option>
+    <option *ngFor="let spot of availableSpots" [value]="spot">{{spot}}</option>
+  </select>
+
+  <label class="block mt-4 text-gray-600">Select Date:</label>
+  <input type="date" class="w-full p-2 border rounded" [(ngModel)]="bookingDate">
+
+  <label class="block mt-4 text-gray-600">Select Time:</label>
+  <input type="time" class="w-full p-2 border rounded" [(ngModel)]="bookingTime">
+
+  <div class="button-group">
+    <button (click)="goBack()" class="button bg-gray-500">
+      Back
+    </button>
+
+    <button (click)="confirmBooking()" class="button bg-green-600">
+      Confirm Booking
+    </button>
+  </div>
+</div>

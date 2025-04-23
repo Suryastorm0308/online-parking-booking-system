@@ -1,0 +1,31 @@
+// admin-parking.component.scss
+@import '../styles/admin-styles';
+
+.parking-actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.parking-status {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  border-radius: 1rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+
+  &.available {
+    background-color: rgba($admin-success, 0.1);
+    color: $admin-success;
+  }
+
+  &.occupied {
+    background-color: rgba($admin-danger, 0.1);
+    color: $admin-danger;
+  }
+
+  &.reserved {
+    background-color: rgba($admin-warning, 0.1);
+    color: $admin-warning;
+  }
+}

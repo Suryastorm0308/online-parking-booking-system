@@ -1,0 +1,40 @@
+<!-- Navbar -->
+<header class="navbar">
+    <div class="logo">Online Parking Booking</div>
+    <input type="text" class="search-bar" placeholder="Search for Parking Spots, Locations...">
+    <button class="login-btn" (click)="navigateToLogin()">Log In</button>
+</header>
+
+<!-- Hero Section -->
+<section class="hero">
+    <h1>Find & Book Your Parking Spot Easily</h1>
+    <p>Reserve your parking space hassle-free at the best locations!</p>
+</section>
+
+<!-- Parking Locations Section -->
+<section class="parking">
+    <h2>Available Parking Spots</h2>
+    <div class="parking-grid">
+        <div class="parking-spot" (click)="bookParking('Spot A1')">
+            <img src="assets/parking1.jpeg" alt="Parking Spot 1" class="clickable">
+            <p>Parking Spot 1 - Downtown</p>
+        </div>
+        <div class="parking-spot" (click)="bookParking('Spot B2')">
+            <img src="assets/parking2.jpg" alt="Parking Spot 2" class="clickable">
+            <p>Parking Spot 2 - Airport</p>
+        </div>
+        <div class="parking-spot" (click)="bookParking('Spot C3')">
+            <img src="assets/parking3.jpg" alt="Parking Spot 3" class="clickable">
+            <p>Parking Spot 3 - Shopping Mall</p>
+        </div>
+        <div class="parking-spot" (click)="bookParking('Spot D4')">
+            <img src="assets/parking4.jpg" alt="Parking Spot 4" class="clickable">
+            <p>Parking Spot 4 - Railway Station</p>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <p>&copy; 2025 Online Parking Booking System | All Rights Reserved</p>
+</footer>

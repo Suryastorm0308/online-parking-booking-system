@@ -1,0 +1,161 @@
+// Variables
+$primary-color: #007bff;
+$background-gradient: linear-gradient(to right, #6a11cb, #2575fc);
+$error-color: #ff4d4d;
+$box-shadow: rgba(0, 0, 0, 0.2);
+
+// Reset Styles
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: $background-gradient;
+  font-family: 'Poppins', sans-serif;
+}
+
+// Login Container - Centered and Fixed Size
+.login-container {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px $box-shadow;
+  width: 380px;
+  text-align: center;
+  animation: fadeIn 0.5s ease-in-out;
+  position: relative;
+
+  h2 {
+    margin-bottom: 1.5rem;
+    color: $primary-color;
+  }
+
+  .form-group {
+    text-align: left;
+    margin-bottom: 1.2rem;
+
+    label {
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+      display: block;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1rem;
+      transition: 0.3s ease-in-out;
+
+      &:focus {
+        border-color: $primary-color;
+        outline: none;
+        box-shadow: 0 0 5px rgba($primary-color, 0.5);
+      }
+    }
+  }
+
+  .error-message {
+    color: $error-color;
+    font-size: 0.85rem;
+    margin-top: 5px;
+  }
+
+  .button-group {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem; // Adds spacing between buttons
+    margin-top: 1.5rem;
+  }
+
+  .login-btn, .back-btn {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .login-btn {
+    background: $primary-color;
+    color: #fff;
+
+    &:hover {
+      background: darken($primary-color, 10%);
+    }
+  }
+
+  .back-btn {
+    background-color: #6c757d;
+    color: white;
+
+    &:hover {
+      background-color: darken(#6c757d, 10%);
+    }
+  }
+}
+
+// Ensures Perfect Centering on All Screens
+.container-wrapper {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// Animation for Smooth UI Load
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Responsive Design for Small Screens
+@media (max-width: 420px) {
+  .login-container {
+    width: 90%;
+    padding: 1.5rem;
+  }
+
+  .signup-link {
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+  
+    a {
+      color: #007bff;
+      font-weight: 600;
+      text-decoration: none;
+      transition: color 0.3s ease-in-out;
+  
+      &:hover {
+        color: darken(#007bff, 10%);
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .button-group {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .back-btn {
+    width: 100%;
+  }
+}

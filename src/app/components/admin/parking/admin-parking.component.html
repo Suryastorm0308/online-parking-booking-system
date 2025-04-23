@@ -1,0 +1,58 @@
+<div class="admin-container">
+  <div class="admin-header">
+    <h2>Manage Parking Spots</h2>
+    <button class="admin-btn btn-primary" (click)="openAddSpotModal()">
+      <i class="fas fa-plus"></i> Add New Spot
+    </button>
+  </div>
+
+  <div class="table-container">
+    <table class="admin-table">
+      <thead>
+        <tr>
+          <th>Spot ID</th>
+          <th>Location</th>
+          <th>Type</th>
+          <th>Status</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let spot of parkingSpots">
+          <td>{{ spot.id }}</td>
+          <td>{{ spot.location }}</td>
+          <td>{{ spot.type }}</td>
+          <td>
+            <span class="status-badge" [class]="spot.status.toLowerCase()">
+              {{ spot.status }}
+            </span>
+          </td>
+          <td class="action-buttons">
+            <button class="admin-btn btn-warning" (click)="editSpot(spot.id)">
+              <i class="fas fa-edit"></i> Edit
+            </button>
+            <button class="admin-btn btn-danger" (click)="deleteSpot(spot.id)">
+              <i class="fas fa-trash"></i> Delete
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Add Spot Modal -->
+  <div *ngIf="showAddSpotModal" class="modal-backdrop">
+    <div class="modal-content">
+      <h3>{{ editingSpot ? 'Edit Parking Spot' : 'Add New Parking Spot' }}</h3>
+      <!-- Add your form fields here -->
+      <div class="modal-actions">
+        <button class="admin-btn btn-primary" (click)="saveSpot()">
+          Save
+        </button>
+        <button class="admin-btn btn-secondary" (click)="closeModal()">
+          Cancel
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

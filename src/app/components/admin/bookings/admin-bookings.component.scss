@@ -1,0 +1,58 @@
+// admin-bookings.component.scss
+@import '../styles/admin-styles';
+.booking-filters {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+
+  .filter-group {
+    flex: 1;
+    min-width: 200px;
+  }
+}
+
+.booking-status {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.5rem;
+  border-radius: 1rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+
+  &::before {
+    content: '';
+    display: inline-block;
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    margin-right: 0.25rem;
+  }
+
+  &.confirmed {
+    background-color: rgba($admin-success, 0.1);
+    color: $admin-success;
+
+    &::before {
+      background-color: $admin-success;
+    }
+  }
+
+  &.pending {
+    background-color: rgba($admin-warning, 0.1);
+    color: $admin-warning;
+
+    &::before {
+      background-color: $admin-warning;
+    }
+  }
+
+  &.cancelled {
+    background-color: rgba($admin-danger, 0.1);
+    color: $admin-danger;
+
+    &::before {
+      background-color: $admin-danger;
+    }
+  }
+}

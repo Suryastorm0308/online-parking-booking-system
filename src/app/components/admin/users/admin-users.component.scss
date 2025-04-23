@@ -1,0 +1,37 @@
+// admin-users.component.scss
+@import '../styles/admin-styles';
+
+.user-avatar {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.user-role {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+
+  &.admin {
+    background-color: rgba($admin-primary, 0.1);
+    color: $admin-primary;
+  }
+
+  &.user {
+    background-color: rgba($admin-success, 0.1);
+    color: $admin-success;
+  }
+
+  &.manager {
+    background-color: rgba($admin-info, 0.1);
+    color: $admin-info;
+  }
+}
+
+.user-actions {
+  display: flex;
+  gap: 0.5rem;
+}
